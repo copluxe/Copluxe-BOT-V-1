@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #080808;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient border */
+.gradient-border {
+  border: 1px solid transparent;
+  background: linear-gradient(#111, #111) padding-box,
+              linear-gradient(135deg, #7c3aed, #ec4899) border-box;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gradient-to-r from-brand-purple to-brand-pink text-white font-semibold rounded-xl px-6 py-3 transition-all duration-200 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100;
+}
+
+.btn-secondary {
+  @apply glass text-white font-medium rounded-xl px-6 py-3 transition-all duration-200 hover:bg-white/10 active:scale-[0.98];
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-brand-purple/60 focus:bg-white/8 transition-all duration-200;
+}
+
+/* Card styles */
+.card {
+  @apply glass rounded-2xl p-6;
+}
+
+/* Glow effect */
+.glow-purple {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.3), 0 0 60px rgba(124, 58, 237, 0.1);
+}
+
+.glow-pink {
+  box-shadow: 0 0 30px rgba(236, 72, 153, 0.3), 0 0 60px rgba(236, 72, 153, 0.1);
+}
+
+/* Progress bar animation */
+@keyframes progress-fill {
+  0% { width: 0%; }
+  100% { width: var(--progress, 100%); }
+}
+
+.progress-bar {
+  animation: progress-fill 0.5s ease-out forwards;
+}
+
+/* Video preview aspect ratio */
+.aspect-tiktok {
+  aspect-ratio: 9 / 16;
+}
+
+/* Drag overlay */
+.drag-active {
+  @apply border-brand-purple bg-brand-purple/5;
+}
